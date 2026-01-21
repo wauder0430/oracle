@@ -1,0 +1,19 @@
+1. C:\app\유저명\product\21c\dbhomeXE\demo\schema\human_resources 압축풀기
+
+
+2. Win+R > cmd
+
+> sqlplus
+사용자명 입력: system
+비밀번호 입력: java1234 
+
+
+3.
+SQL> alter session set "_oracle_script" = true;
+SQL> @?/demo/schema/human_resources/hr_main.sql
+SQL> 1의 값을 입력하십시오: java1234
+SQL> 2의 값을 입력하십시오: users
+SQL> 3의 값을 입력하십시오: temp
+SQL> 4의 값을 입력하십시오: java1234
+SQL> 5의 값을 입력하십시오: C:\app\유저명\product\21c\dbhomeXE\demo\schema\log
+SQL> 6의 값을 입력하십시오: localhost:1521/xe

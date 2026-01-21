@@ -1,0 +1,172 @@
+1.oracle xe download
+
+21c Express Edition 
+C:\app\user\product\21c\
+비번 java1234
+
+
+2. oracle developer download
+Windows 64-bit with JDK 17 included
+
+
+
+오라클, Oracle
+
+1. Oracle Database 21c XE 
+    - 데이터베이스
+
+2. SQL Developer
+    - 데이터베이스 클라이언트 도구
+
+
+자바 응용 프로그램 > 목적? > 데이터 관리 
+1. 파일 시스템
+2. 관계형 데이터베이스 (Relational Database, RDB)
+    - 데이터 > 표 저장 
+3. 관계형 데이터베이스 관리 시스템 (Relational Database Management System, RDBMS)
+    - 오라클
+
+- DB, RDB, DBMS, RDBMS > 오라클
+
+
+오라클 사용 계층 
+1. 데이터베이스 관리자(DBA)
+2. 데이터베이스 개발자
+3. 응용 프로그램 개발자(***)
+
+
+
+UI 없이 동작하는 프로그램(눈에 보이는 화면X)
+- 윈도우즈 > 서비스
+- 리눅스 > 데몬(Demon)
+
+
+오라클 동작 중?
+1. 작업 관리자 > 서비스 
+    - OracleServiceXE > 오라클 데이터 베이스 (***)
+    - OracleOraDB21Home1TNSListener > 클라이언트 접속 서비스  
+2. Win + R > services.msc
+    - 서비스 창
+
+3. 터미널 
+    > net start
+    > set stop <서비스명>
+        - net stop OracleServiceXE   
+    > set start <서비스명>
+        - net start OracleServiceXE
+
+
+사용자이름@호스트이름
+
+
+클라이언트 도구 
+1. SQL Developer
+2. SQL*Plus
+3. Toad
+4. SQLGate
+5. DateGrip(***) > Jetbrains
+6. DBeaver(***)
+
+
+계정(일반 사용자) 생성하기 
+1. 샘플 계정
+    - hr, scott
+2. 직접 계정 생성하기
+    - create user 유저명 identified by 비밀번호;
+    계정 삭제하기
+    - drop user 유저명;
+
+
+C:\app\user\product\21c\dbhomeXE\demo\schema\에 human_resources 복붙
+
+-- create tables, sequences and constraint
+@__SUB__CWD__/human_resources/hr_popul
+->
+@?demo/schema/human_resources/hr_popul
+
+sqlplus > system으로 접속
+alter session set "_oracle_script" = true; > 세션이 변경되었습니다.
+
+@?/demo/schema/human_resources/hr_main.sql
+java1234
+users
+temp
+java1234
+C:\app\user\product\21c\dbhomeXE\demo\schema\log
+localhost:1521/xe
+
+
+
+
+SQL, Structured Query Language, Query
+- 관계형 데이터베이스 조작 언어 
+
+자바 연동 RDB
+- Oracle 
+- MySQL
+- MariaDB
+- PostgreSQL
+- DB2 
+- MS SQL Server ...
+
+1. SQL과 RDBMS은 서로 독집적으로 관리된다. 
+    - SQL > 모든 데이터베이스에서 사용하는 공통 언어
+    - Oracle 데이터베이스 > Oracle 회사 
+
+2. 표준 SQL, ANSI-SQL
+    - 모든 DB에 적용 가능한 SQL
+
+3. 제조사별(DBMS) SQL
+    - 특정 DB에서 적용 가능한 SQL
+    - 확장된 문법
+    - Oracle > PL/SQL
+    - MS-SQL > T-SQL
+
+오라클 수업 = ANSI-SQL(70%) + PL/SQL(1~20%) + DB 설계 (1~20%)
+
+
+
+ANSI-SQL
+
+1. DDL 
+    - Data Definition Language
+    - 데이터 정의어
+    - DB의 구조를 생성/관리하는 명령어
+    - 데이터베이스 객체(테이블, 뷰, 사용자, 인덱스 등)를 
+        생성/수정/삭제하는 명령어
+    a. create: 생성
+    b. drop  : 삭제
+    c. alter : 수정
+2. DML 
+    - Data Manipulation Language
+    - 데이터 조작어
+    - 테이블 > 데이터를 추가/수정/삭제/조회하는 명령어
+    - CRUD, Create/Read/Update/Delete 
+    - 사용 빈도가 가장 높음
+    a. select: 조회>R 
+    b. insert: 추가>C
+    c. update: 수정>U
+    d. delete: 삭제>D
+3. DCL
+    - Data Control Language
+    - 데이터 제어어
+    - 계정 관리, 보안 관리, 트랜잭션 처리 등..
+    a. commit 
+    b. rollback
+    c. grant
+    d. revoke
+4. DQL
+    - Data Query Language
+    - DML 중 select문을 따로 부르는 표현
+5. TCL
+    -
+
+오라클 인코딩
+- 1.0 ~ 8: EUC-KR
+- 9i ~ 현재: UTF-8
+
+SQL > 대소문자를 구분하지 않는다. 
+- 키워드: 대문자
+- 식별자: 소문자
+
+SELECT name FROM member;

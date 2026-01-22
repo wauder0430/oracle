@@ -111,7 +111,9 @@ where basicpay * 12 >= 20000000 and city = '서울' and jikwi in('과장', '부�
 
 -- 17.tblInsa
 -- 국가명 'O국'인 나라를 가져오시오.
-
+select * 
+from tblCountry
+where name like '_국';
 
 -- 18.employees
 -- 연락처가 515로 시작하는 직원들 가져오시오.

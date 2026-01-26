@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
-    <file url="file://$PROJECT_DIR$/ex01_datatype.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
     <file url="file://$PROJECT_DIR$/문제/문제02.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
     <file url="file://$PROJECT_DIR$/문제/문제03.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
+    <file url="file://$PROJECT_DIR$/문제/문제06.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
+    <file url="file://$PROJECT_DIR$/수업데이터/[수업데이터]tblAddressBook.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
     <file url="file://$PROJECT_DIR$/수업데이터/수업데이터_utf8.sql" value="a90462cc-7bf4-46d6-bdb8-07c9f1c66a68" />
   </component>
 </project>

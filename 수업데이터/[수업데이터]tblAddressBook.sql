@@ -24,11 +24,14 @@ create table tblAddressBook (
 drop sequence addressbook_seq;
 create sequence addressbook_seq;
 
+commit;
 
 
-
-insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '최민기', 'm', 32, 160, 74, 'behavior@gmail.com', '010-8296-4828', '학생', '17548', '경기도 안성시 공도읍 문터1길 6', '서울');
+insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '박정안', 'f', 36, 158, 42, 'look@gmail.com', '010-4477-3196', '취업준비생', '61972', '광주광역시 서구 화운로199번길 15 ~ 36', '서울');
+insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '민로훈', 'm', 19, 167, 78, 'call@gmail.com', '010-1036-1898', '증권투자상담사', '35063', '대전광역시 중구 범골로 3 ~ 29', '인천');
+insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '정윤일', 'm', 38, 187, 61, 'free@daum.net', '010-9556-8824', '회계사', '04909', '서울특별시 광진구 긴고랑로13길 5 ~ 42', '창원');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '이은률', 'm', 22, 179, 76, 'whole@daum.net', '010-7145-3786', '학생', '63526', '제주특별자치도 서귀포시 안덕면 병악로404번길 6-5', '부산');
+insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '최민기', 'm', 32, 160, 74, 'behavior@gmail.com', '010-8296-4828', '학생', '17548', '경기도 안성시 공도읍 문터1길 6', '서울');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '최대율', 'm', 33, 167, 64, 'lead@naver.com', '010-4858-3917', '보험계리인', '11637', '경기도 의정부시 신흥로106번길 4 ~ 52-10', '서울');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '강정희', 'f', 46, 158, 61, 'staff@daum.net', '010-1699-1071', '취업준비생', '05399', '서울특별시 강동구 성내로14길 18', '서울');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '박채하', 'f', 49, 168, 57, 'problem@yahoo.com', '010-6420-1673', '학생', '05361', '서울특별시 강동구 진황도로 145 ~ 151-1', '서울');
@@ -51,9 +54,6 @@ insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, 
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '신원재', 'm', 27, 164, 67, 'federal@yahoo.com', '010-4148-4313', '취업준비생', '03974', '서울특별시 마포구 성미산로15길 74', '부산');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '김은성', 'm', 38, 173, 71, 'stay@live.com', '010-5261-1084', '레크리에이션강사', '01219', '서울특별시 강북구 도봉로10나길 4 ~ 22', '서울');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '최지율', 'f', 34, 151, 68, 'might@gmail.com', '010-1257-8980', '취업준비생', '63171', '제주특별자치도 제주시 서사로5길 1 ~ 22', '오산');
-insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '박정안', 'f', 36, 158, 42, 'look@gmail.com', '010-4477-3196', '취업준비생', '61972', '광주광역시 서구 화운로199번길 15 ~ 36', '서울');
-insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '민로훈', 'm', 19, 167, 78, 'call@gmail.com', '010-1036-1898', '증권투자상담사', '35063', '대전광역시 중구 범골로 3 ~ 29', '인천');
-insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '정윤일', 'm', 38, 187, 61, 'free@daum.net', '010-9556-8824', '회계사', '04909', '서울특별시 광진구 긴고랑로13길 5 ~ 42', '창원');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '김은찬', 'm', 22, 181, 85, 'each@naver.com', '010-4178-1869', '건물주', '63621', '제주특별자치도 서귀포시 남원읍 남원체육관로 227 ~ 345', '서울');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '이동율', 'm', 32, 173, 79, 'understand_picture@gmail.com', '010-9817-1345', '포토그래퍼', '61959', '광주광역시 서구 상무평화로 62 ~ 64', '남원');
 insert into tblAddressBook (seq, name, gender, age, height, weight, email, tel, job, zipcode, address, hometown) values (addressbook_seq.nextval, '최노영', 'f', 28, 154, 52, 'trial@live.com', '010-6772-9600', '학생', '18294', '경기도 화성시 봉담읍 매봉로123번길 55', '서울');

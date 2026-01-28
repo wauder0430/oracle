@@ -23,10 +23,26 @@ from tblAddressBook
     where job = (select job from tblAddressBook group by job having count(*) = (select max(count(*)) from tblAddressBook group by job));
 
 -- 4. tblAddressBook. 이메일 도메인들 중 평균 아이디 길이가 가장 긴 이메일 사이트의 도메인은 무엇인가?
+select * from tblAddressBook;
+-- 도메인 나누기
+select substr(email, instr(email,'@')+1) from tblAddressBook group by substr(email, instr(email,'@')+1);
+-- 아이디 나누기
+select substr(email, 1, instr(email,'@')-1) from tblAddressBook group by substr(email, 1, instr(email,'@')-1);
+select length(substr(email, 1, instr(email,'@')-1)) from tblAddressBook group by substr(email, 1, instr(email,'@')-1);
+
+select max(round(avg(length(substr(email, 1, instr(email,'@')-1))),2)) from tblAddressBook group by substr(email, instr(email,'@')+1);
+
+-- 정답
+select substr(email, instr(email,'@')+1) 
+from tblAddressBook 
+group by substr(email, instr(email,'@')+1) 
+    having 
+        round(avg(length(substr(email, 1, instr(email,'@')-1))),2) = (select max(round(avg(length(substr(email, 1, instr(email,'@')-1))),2)) from tblAddressBook group by substr(email, instr(email,'@')+1));
+
 
 
 -- 5. tblAddressBook. 평균 나이가 가장 많은 출신(hometown)들이 가지고 있는 직업 중 가장 많은 직업은?
-select job from TBLADDRESSBOOK group by job having count(*) = (select max(count(job)) from TBLADDRESSBOOK where HOMETOWN = (select hometown from TBLADDRESSBOOK
+select job,count(job) from TBLADDRESSBOOK group by job having count(*) = (select max(count(job)) from TBLADDRESSBOOK where HOMETOWN = (select hometown from TBLADDRESSBOOK
     group by hometown having avg(age) = (select max(avg(age)) from tblAddressBook group by hometown))
 group by job);
 

@@ -2,21 +2,63 @@
 
 
 -- 1. tblStaff, tblProject. 현재 재직중인 모든 직원의 이름, 주소, 월급, 담당프로젝트명을 가져오시오.
-       
-       
--- 2. tblVideo, tblRent, tblMember. '뽀뽀할까요' 라는 비디오를 빌려간 회원의 이름은?
-    
-    
--- 3. tblStaff, tblProejct. 'TV 광고'을 담당한 직원의 월급은 얼마인가?
-    
-    
--- 4. tblVideo, tblRent, tblMember. '털미네이터' 비디오를 한번이라도 빌려갔던 회원들의 이름은?
+select * from tblStaff;
+select * from tblProject;
 
-                
+select a.name, a.address, a.salary, b.project from tblStaff a left outer join tblProject b on a.seq = b.staff_seq;
+-- 2. tblVideo, tblRent, tblMember. '뽀뽀할까요' 라는 비디오를 빌려간 회원의 이름은?
+select * from tblVideo;
+select * from tblRent;
+select * from tblMember;
+
+select 
+    m.name 
+from tblMember m
+    inner join tblRent r on m.seq = r.member
+        inner join tblVideo v on r.video = v.seq 
+where v.name = '뽀뽀할까요';
+-- 3. tblStaff, tblProejct. 'TV 광고'을 담당한 직원의 월급은 얼마인가?
+select * from tblStaff;
+select * from tblProject;
+
+select salary 
+from tblStaff s 
+    inner join tblProject p on s.seq = p.staff_seq
+where p.project = 'TV 광고';
+-- 4. tblVideo, tblRent, tblMember. '털미네이터' 비디오를 한번이라도 빌려갔던 회원들의 이름은?
+select m.name 
+from tblMember m 
+    inner join tblRent r on m.seq = r.member
+        inner join tblVideo v on r.video = v.seq
+where v.name = '털미네이터';
 -- 5. tblStaff, tblProject. 서울시에 사는 직원을 제외한 나머지 직원들의 이름, 월급, 담당프로젝트명을 가져오시오.
+select * from tblStaff;
+select * from tblProject;
     
-    
+select name, salary, project
+from tblStaff s 
+    inner join tblProject p on s.seq = p.staff_seq
+where address <> '서울시';
 -- 6. tblCustomer, tblSales. 상품을 2개(단일상품) 이상 구매한 회원의 연락처, 이름, 구매상품명, 수량을 가져오시오.
+select * from tblCustomer;
+select * from tblSales;
+
+select s.cseq
+from tblCustomer c
+    inner join tblSales s on c.seq = s.cseq
+group by s.cseq
+    having count(s.cseq) >= 2;
+
+select c2.tel, c2.name, s2.item
+from tblCustomer c2
+    inner join tblSales s2 on c2.seq = s2.cseq
+where s2.seq in (select s.cseq
+from tblCustomer c
+    inner join tblSales s on c.seq = s.cseq
+group by s.cseq
+    having count(s.cseq) >= 2);
+
+
                 
                 
 -- 7. tblVideo, tblRent, tblGenre. 모든 비디오 제목, 보유수량, 대여가격을 가져오시오.

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="자원 &apos;수업&apos;을(를) &apos;ERD수업&apos;(으)로 이름 바꾸기" description="&apos;수업&apos; 자원 이름 바꾸기" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/수업" name="ERD수업" stamp="1769586452245" updateReferences="true"/>
+</session>

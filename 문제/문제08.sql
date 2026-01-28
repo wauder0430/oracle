@@ -60,34 +60,78 @@ group by s.cseq
 
 
                 
-                
+select * from TBLGENRE;
 -- 7. tblVideo, tblRent, tblGenre. 모든 비디오 제목, 보유수량, 대여가격을 가져오시오.
-              
+select
+    v.name, v.QTY, g.price
+from TBLVIDEO v
+    inner join TBLRENT r on v.SEQ = r.VIDEO
+        inner join tblGenre g on g.SEQ = v.GENRE;
+
   
 -- 8. tblVideo, tblRent, tblMember, tblGenre. 2007년 2월에 대여된 구매내역을 가져오시오. 회원명, 비디오명, 언제, 대여가격
-        
+select
+    m.name, v.name, r.RENTDATE, g.PRICE
+from TBLVIDEO v
+    inner join TBLRENT r on v.SEQ = r.VIDEO
+        inner join tblGenre g on g.SEQ = v.GENRE
+            inner join tblMember m on m.seq = r.member
+where to_char(r.RENTDATE, 'yyyy-mm') like '2007-02%'
 
 -- 9. tblVideo, tblRent, tblMember. 현재 반납을 안한 회원명과 비디오명, 대여날짜를 가져오시오.
-    
+select
+    m.name, v.name, r.RENTDATE
+from TBLVIDEO v
+    inner join tblRent r on v.seq = r.VIDEO
+        inner join tblmember m on m.SEQ = r.MEMBER
+where r.retdate is null;
     
 -- 10. employees, departments. 사원들의 이름, 부서번호, 부서명을 가져오시오.
-        
-        
+select
+    e.FIRST_NAME||e.LAST_NAME, e.DEPARTMENT_ID, d.DEPARTMENT_NAME
+from EMPLOYEES e
+    inner join DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
 -- 11. employees, jobs. 사원들의 정보와 직업명을 가져오시오.
-        
+select e.*, j.JOB_TITLE
+from EMPLOYEES e
+    inner join jobs j on e.JOB_ID = j.JOB_ID;
         
 -- 12. employees, jobs. 직무(job_id)별 최고급여(max_salary) 받는 사원 정보를 가져오시오.
-    
-    
--- 13. departments, locations. 모든 부서와 각 부서가 위치하고 있는 도시의 이름을 가져오시오.
-        
-        
--- 14. locations, countries. location_id 가 2900인 도시가 속한 국가 이름을 가져오시오.
+select * from EMPLOYEES;
+select * from JOBS;
 
+SELECT e.*
+FROM EMPLOYEES e
+    INNER JOIN JOBS j ON e.JOB_ID = j.JOB_ID
+WHERE e.SALARY in (
+    SELECT MAX(SALARY)
+    FROM EMPLOYEES
+    group by job_id
+);
+-- 13. departments, locations. 모든 부서와 각 부서가 위치하고 있는 도시의 이름을 가져오시오.
+select * from DEPARTMENTS;
+select * from LOCATIONS;
+
+select d.DEPARTMENT_NAME, l.CITY
+from DEPARTMENTS d
+    inner join locations l on d.LOCATION_ID = l.LOCATION_ID;
+-- 14. locations, countries. location_id 가 2900인 도시가 속한 국가 이름을 가져오시오.
+select * from LOCATIONS;
+select * from COUNTRIES;
+
+select c.COUNTRY_NAME
+from COUNTRIES c
+    inner join locations l on c.COUNTRY_ID = l.COUNTRY_ID
+where l.LOCATION_ID = 2900;
             
 -- 15. employees. 급여를 12000 이상 받는 사원과 같은 부서에서 근무하는 사원들의 이름, 급여, 부서번호를 가져오시오.
-        
-        
+select * from EMPLOYEES;
+
+select FIRST_NAME||LAST_NAME as name, SALARY, DEPARTMENT_ID
+from EMPLOYEES
+where DEPARTMENT_ID in (select DEPARTMENT_ID from EMPLOYEES
+where SALARY >= 12000);
 -- 16. employees, departments. locations.  'Seattle'에서(LOC) 근무하는 사원의 이름, 직위, 부서번호, 부서이름을 가져오시오.
     
     

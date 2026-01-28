@@ -21,3 +21,5 @@ insert into tblBBB values ('사자', '회색');
 insert into tblBBB values ('고양이', '검정');
 
 commit;
+
+
